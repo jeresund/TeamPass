@@ -5,7 +5,7 @@
  * @author        Nils Laumaillé
  * @version       2.1.27
  * @copyright     (c) 2009-2017 Nils Laumaillé
- * @licensing     GNU AFFERO GPL 3.0
+ * @licensing     GNU GPL-3.0
  * @link          http://www.teampass.net
  *
  * This library is distributed in the hope that it will be useful,
@@ -75,6 +75,8 @@ if (isset($LANG) === true) {
         $_SESSION['user_privilege'] = $LANG['gestionnaire'];
     } elseif ($_SESSION['user_read_only'] === '1') {
         $_SESSION['user_privilege'] = $LANG['read_only_account'];
+    } elseif ($_SESSION['user_can_manage_all_users'] === '1') {
+        $_SESSION['user_privilege'] = $LANG['human_resources'];
     } else {
         $_SESSION['user_privilege'] = $LANG['user'];
     }
